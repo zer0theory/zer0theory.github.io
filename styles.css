@@ -3,9 +3,18 @@ background: linear-gradient(0deg, #000000 1%, #36006b 100%);
 background-repeat: no-repeat;
 background-color: #000000;
 color: #ffffff;
-.glow {
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #f00, 0 0 70px #f00, 0 0 80px #f00, 0 0 100px #f00, 0 0 150px #f00;
-}
+
+
+
+
+
+
+.purple-glow {
+-webkit-box-shadow:0px 0px 151px 71px rgba(106,20,204,0.9);
+-moz-box-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
+box-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
+  }
+
 }
 
 
