@@ -9,7 +9,18 @@ color: #ffffff;
 /* -moz-box-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9); */
 text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
   }
-
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
 }
 
 
