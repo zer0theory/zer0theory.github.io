@@ -37,7 +37,8 @@ text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
     text-align: right;
     color: #c4ff47;
     a:link {
-      color: #b4dfff;
+      color: #c4ff47;
+      text-decoration: none;
     }
   }
 
