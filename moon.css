@@ -96,3 +96,78 @@ img{
   right: 20px;
 }
 
+body { 
+color: #ffffff;
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: magenta;
+}
+
+/* selected link */
+a:active {
+  color: green;
+}
+.purple-glow {
+/* -webkit-box-shadow:0px 0px 151px 71px rgba(106,20,204,0.9); */
+/* -moz-box-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9); */
+text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
+  }
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #f7f,
+    0 0 21px #97f,
+    0 0 42px #97f,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+.blackSmoke {
+  color: #fff;
+  text-shadow:
+    0 0 7px #000,
+    0 0 10px #000,
+    0 0 21px #000,
+    0 0 42px #000,
+    0 0 82px #000,
+    0 0 92px #000,
+    0 0 102px #000,
+    0 0 151px #000;
+}
+.rightsd {
+    text-align: right;
+    color: #c4ff47;
+    a:link {
+      color: #c4ff47;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #c4ff47;
+      text-decoration: none;
+    }
+  }
+p.solid {border-style: solid;}
+
+div.box1 {
+  max-width: 800px;
+  margin: auto;
+  border: 3px solid #36006b;
+  background-color: #000000;
+}
+
+
+}
+
