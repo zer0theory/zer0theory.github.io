@@ -97,8 +97,8 @@ img{
 }
 
 body { 
-color: #ffffff;
 z-index: 8;
+color: #ffffff;
 
 /* unvisited link */
 a:link {
