@@ -98,7 +98,7 @@ img{
 
 body { 
   z-index: 4;
-  position: relative;
+  position: absolute;
   color: #ffffff;
 
 /* unvisited link */
