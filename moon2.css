@@ -34,8 +34,8 @@
 }
 
 .background-container{
-	position: fixed;
-	top: 0;	
+	position: relative;
+	top: 0;
 	left:0;
 	bottom: 0;
 	right: 0;
@@ -80,7 +80,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 2;
+    z-index: 3;
 
    -moz-animation:move-background 150s linear infinite;
   -ms-animation:move-background 150s linear infinite;
@@ -97,9 +97,9 @@ img{
 }
 
 body { 
-  z-index: 4;
   position: relative;
-  color: #ffffff;
+color: #ffffff;
+}
 
 /* unvisited link */
 a:link {
@@ -169,7 +169,6 @@ div.box1 {
   border: 3px solid #36006b;
   background-color: #000000;
 }
-
 
 }
 
