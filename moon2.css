@@ -56,7 +56,7 @@
   pointer-events: none;
 	width:10000px;
 	height: 100%;
-	background: transparent url("images/twinkling.png") repeat;
+	background: transparent url("images/twinkling70opacity.png") repeat;
 	background-size: 1000px 1000px;
     position: absolute;
     right: 0;
@@ -76,7 +76,7 @@
   pointer-events: none;
 	width:10000px;
 	height: 100%;
-	background: transparent url("images/clouds_repeat.png") repeat;
+	background: transparent url("images/clouds_repeat70opacity.png") repeat;
 	background-size: 1000px 1000px;
     position: absolute;
     right: 0;
