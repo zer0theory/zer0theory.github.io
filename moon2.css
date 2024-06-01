@@ -24,7 +24,7 @@
 	}
 }
 
-    @-webkit-keyframes move-background {
+@-webkit-keyframes move-background {
 	from {
 		-webkit-transform: translate3d(0px, 0px, 0px);
 	}
@@ -64,12 +64,11 @@
     bottom: 0;
     z-index: -2;
     
-    -moz-animation:move-background 70s linear infinite;
+  -moz-animation:move-background 70s linear infinite;
   -ms-animation:move-background 70s linear infinite;
   -o-animation:move-background 70s linear infinite;
   -webkit-animation:move-background 70s linear infinite;
   animation:move-background 70s linear infinite;
-	
 }
 
 .clouds{
@@ -84,17 +83,18 @@
     bottom: 0;
     z-index: -2;
 
-   -moz-animation:move-background 150s linear infinite;
+  -moz-animation:move-background 150s linear infinite;
   -ms-animation:move-background 150s linear infinite;
   -o-animation:move-background 150s linear infinite;
   -webkit-animation:move-background 150s linear infinite;
   animation:move-background 150s linear infinite;
 }
+
 img{
   height: 70vh;
   width:70vh;
   position: absolute;
-  z-index: -1;  /* changing from 3 to -1 */
+  z-index: -1;  
   right: 20px;
 }
 
@@ -152,6 +152,7 @@ text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
     0 0 102px #f00,
     0 0 151px #fff;
 }
+
 .rightsd {
     text-align: right;
     color: #c4ff47;
@@ -167,7 +168,7 @@ text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
 p.solid {border-style: solid;}
 
 div.box1 {
-  max-width: 800px;
+  max-width: 1024px;
   margin: auto;
   border: 3px solid #36006b;
   background-color: #000000;
