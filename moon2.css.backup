@@ -33,15 +33,6 @@
 	}
 }
 
-div.background-container > div {
-  position: relative;
-}
-
-div.background-container > div img {
-  position: absolute;
-  z-index: 1; /* keep the moon behind the background */
-}
-
 .background-container{
 	position: fixed;
 	top: 0;
