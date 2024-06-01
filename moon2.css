@@ -182,28 +182,37 @@ div.box2 {
   background-color: #000000;
 }
 
-.topButton {
+.container{
+  position:relative;
+  width:400px;
+  height:400px;
+  background:white;
+  margin: auto;
+  padding-top:300px;
+  padding-left: 120px;  
+}
+.button {
   color: #fff;
   font-weight: normal;
   font-size: 22px;
-  background: #36006b;
+  background: #630fe8;
   border-radius: 50px;
   padding: 30px 90px;
   border: none;
   transition: .5s ease;
   box-shadow: 0 15px 60px -5px rgba(0, 0, 0, .5);
 }
-.topButton:hover {
+.button:hover {
   box-shadow: none;
   cursor: pointer;
 }
-.topButton:hover + .drip-1{
+.button:hover + .drip-1{
   height: 50px;
 }
-.topButton:hover ~ .drip-2{
+.button:hover ~ .drip-2{
   height: 90px;
 }
-.topButton:hover ~ .drip-3{
+.button:hover ~ .drip-3{
   height: 30px;
 }
 .drip-1{
@@ -233,6 +242,4 @@ div.box2 {
   margin: 0px 60px;
   transition: height .7s ease;
 }
-
 }
-
