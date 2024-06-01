@@ -184,12 +184,12 @@ div.box2 {
 
 .container{
   position:relative;
-  width:100px;
-  height:100px;
+  width: 00px;
+  height: 00px;
   background:black;
   margin: auto;
-  padding-top: 300px;
-  padding-left: 120px;  
+  padding-top: 00px;
+  padding-left: 00px;  
 }
 .button {
   color: #fff;
