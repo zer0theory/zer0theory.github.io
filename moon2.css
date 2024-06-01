@@ -184,11 +184,11 @@ div.box2 {
 
 .container{
   position:relative;
-  width:400px;
-  height:400px;
-  background:white;
+  width:100px;
+  height:100px;
+  background:black;
   margin: auto;
-  padding-top:300px;
+  padding-top: 300px;
   padding-left: 120px;  
 }
 .button {
