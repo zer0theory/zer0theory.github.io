@@ -186,6 +186,7 @@ div.box1 {
 div.box2 {
   max-width: 1024px;
   margin: auto;
+  padding: 15px;
   border: 3px solid #36006b;
   background-color: #000000;
   z-index: 99;
