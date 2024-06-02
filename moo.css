@@ -184,6 +184,7 @@ div.box2 {
 
 .container{
   position:relative;
+  max-width: 99999px;
   width: 00px;
   height: 00px;
   background:black;
