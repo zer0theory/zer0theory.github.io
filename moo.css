@@ -123,6 +123,12 @@ a:hover {
 a:active {
   color: green;
 }
+
+p.pad1 {
+  padding-top: 10px;
+}
+
+
 .purple-glow {
 /* -webkit-box-shadow:0px 0px 151px 71px rgba(106,20,204,0.9); */
 /* -moz-box-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9); */
