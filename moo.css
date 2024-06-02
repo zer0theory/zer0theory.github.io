@@ -181,6 +181,7 @@ div.box2 {
   margin: auto;
   border: 3px solid #36006b;
   background-color: #000000;
+  z-index: 99;
 }
 
 .container{
