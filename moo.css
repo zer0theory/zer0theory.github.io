@@ -393,7 +393,7 @@ div.box2 {
   height:0px;
   border-radius:0 0 21px 21px;
   background:#a1a1a1;
-  margin: 0px 552px;
+  margin: 0px 542px;
   transition: height 0.9s ease;
 }
 .drip-d2{
@@ -402,7 +402,7 @@ div.box2 {
   height:0px;
   border-radius:0 0 21px 21px;
   background:#7914A3;
-  margin: 0px 567px;
+  margin: 0px 562px;
   transition: height 1.5s ease;
 }
 .drip-d3{
@@ -411,7 +411,7 @@ div.box2 {
   height:0px;
   border-radius:0 0 21px 21px;
   background:#5B005C;
-  margin: 0px 580px;
+  margin: 0px 570px;
   transition: height .7s ease;
 }
 
