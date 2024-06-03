@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="moo.css">
+  <link rel="stylesheet" href="moon2.css">
   <title>Zerotheory Games</title>
   </head>
 
@@ -17,9 +16,6 @@
 <html lang="en">
 
 <style>
-body {
-  font-family: 'Roboto';font-size: 22px;
-}
 .content-container {
   max-width: 1024px;
 }
@@ -67,63 +63,22 @@ h1 {
                                              
 -->
   <body>
-<!-- 
-      <div class="container"> 
--->
-    <p class="pad1">
-      </p>
-   <div class="box1">
-      <a href="index.html" style="text-decoration:none">
-<button class="button-a" style="margin-right: 10px">
-      Home</button>
- <div class="drip-a1"></div>
- <div class="drip-a2"></div>
- <div class="drip-a3"></div>
-      </a>
-
-
-     <a href="games.html" style="text-decoration:none">
-<button class="button-b" style="margin-right: 10px">
-      Games</button>
- <div class="drip-b1"></div>
- <div class="drip-b2"></div>
- <div class="drip-b3"></div>
-      </a>
-
-
-      <a href="community.html" style="text-decoration:none">
-<button class="button-c" style="margin-right: 10px">
-      Community</button>
- <div class="drip-c1"></div>
- <div class="drip-c2"></div>
- <div class="drip-c3"></div>
-      </a>
-
-<a href="about.html" style="text-decoration:none">
-<button class="button-d" style="margin-right: 10px">
-      About</button>
- <div class="drip-d1"></div>
- <div class="drip-d2"></div>
- <div class="drip-d3"></div>
-  </a>
-
-
+   <div class="box2">
+ <div class="container">
 </div>
-
-
-
-
-
-    <p class="pad1">
-    </p>
-      <h1> 
-      <center>
+    <h1>
+    <center>
         Zerotheory Games
-      </center>
-      </h1> 
-    <p class="pad1">
-    </p>
-    <div class="box2">
+    </center>
+    </h1>
+      </div>
+    <br>  
+    <br>  
+    <br>  
+    <br>  
+    <br>  
+
+    <div class="box1">
       A BOX to edit<br>
       And Fill with my shit<br>
       What will I put here?<br>
