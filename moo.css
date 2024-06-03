@@ -99,7 +99,7 @@ img{
 }
 
 body { 
-  fonty-family: roboto;
+  fonty-family: 'Roboto';
   position: absolute;
   z-index: 10;
 color: #ffffff;
