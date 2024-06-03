@@ -100,6 +100,7 @@ img{
 
 body { 
   fonty-family: 'Roboto';
+  font-size: 22px;
   position: absolute;
   z-index: 10;
 color: #ffffff;
