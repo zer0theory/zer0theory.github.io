@@ -179,6 +179,7 @@ p.solid {border-style: solid;}
 
 div.box1 {
   max-width: 1024px;
+  width: fit-content;
   padding: 15px;
   margin: auto;
   border: 3px solid #36006b;
