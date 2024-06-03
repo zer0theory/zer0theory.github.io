@@ -1,0 +1,317 @@
+body {
+background: linear-gradient(0deg, #000000 1%, #36006b 100%);
+  font-family: 'Roboto';
+  font-size: 22px;
+background-repeat: no-repeat;
+background-color: #000000;
+  z-index: 10;
+color: #ffffff;
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: magenta;
+}
+
+/* selected link */
+a:active {
+  color: green;
+}
+
+p.pad1 {
+    padding-top: 5px;
+  }
+
+.purple-glow {
+/* -webkit-box-shadow:0px 0px 151px 71px rgba(106,20,204,0.9); */
+/* -moz-box-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9); */
+text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
+  }
+.neonText {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #f7f,
+    0 0 21px #97f,
+    0 0 42px #97f,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+}
+.blackSmoke {
+  color: #fff;
+  text-shadow:
+    0 0 7px #000,
+    0 0 10px #000,
+    0 0 21px #000,
+    0 0 42px #000,
+    0 0 82px #000,
+    0 0 92px #000,
+    0 0 102px #000,
+    0 0 151px #000;
+}
+.rightsd {
+    text-align: right;
+    color: #c4ff47;
+    a:link {
+      color: #c4ff47;
+      text-decoration: none;
+    }
+    a:visited {
+      color: #c4ff47;
+      text-decoration: none;
+    }
+  }
+p.solid {border-style: solid;}
+
+div.box1 {
+  max-width: 800px;
+  margin: auto;
+  border: 3px solid #36006b;
+  background-color: #000000;
+}
+
+div.box2 {
+    max-width: 1024px;
+    margin: auto;
+    padding: 15px;
+    border: 3px solid #36006b;
+    background-color: #000000;
+    z-index: 99;
+  }
+
+.container{
+    position: relative;
+    max-width: 9999px;
+    width: 00px;
+    height: 00px;
+    background: black;
+    margin: auto;
+    padding-top: 00px;
+    padding-left: 00px;
+  }
+
+.button-a {
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  background: #36006b;
+  border-radius: 40px;
+  padding: 8px 40px;
+  border: none;
+  transition: .5s ease;
+  box-shadow: rgba(54, 0, 107, 0.4) 5px 5px, rgba(54, 0, 107, 0.3) 10px 10px, rgba(54, 0, 107, 0.2) 15px 15px, rgba(54, 0, 107, 0.1) 20px 20px, rgba(54, 0, 107, 0.05) 25px 25px;
+  
+}
+.button-a:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+.button-a:hover + .drip-a1{
+  height: 50px;
+}
+.button-a:hover ~ .drip-a2{
+  height: 90px;
+}
+.button-a:hover ~ .drip-a3{
+  height: 30px;
+}
+.drip-a1{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#a1a1a1;
+  margin: 0px 18px;
+  transition: height 0.9s ease;
+}
+.drip-a2{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#7914A3;
+  margin: 0px 44px;
+  transition: height 1.5s ease;
+}
+.drip-a3{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#5B005C;
+  margin: 0px 60px;
+  transition: height .7s ease;
+}
+
+
+.button-b {
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  background: #36006b;
+  border-radius: 40px;
+  padding: 8px 40px;
+  border: none;
+  transition: .5s ease;
+  box-shadow: rgba(54, 0, 107, 0.4) 5px 5px, rgba(54, 0, 107, 0.3) 10px 10px, rgba(54, 0, 107, 0.2) 15px 15px, rgba(54, 0, 107, 0.1) 20px 20px, rgba(54, 0, 107, 0.05) 25px 25px;
+}
+.button-b:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+.button-b:hover + .drip-b1{
+  height: 50px;
+}
+.button-b:hover ~ .drip-b2{
+  height: 90px;
+}
+.button-b:hover ~ .drip-b3{
+  height: 30px;
+}
+.drip-b1{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#a1a1a1;
+  margin: 0px 218px;
+  transition: height 0.9s ease;
+}
+.drip-b2{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#7914A3;
+  margin: 0px 234px;
+  transition: height 1.5s ease;
+}
+.drip-b3{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#5B005C;
+  margin: 0px 240px;
+  transition: height .7s ease;
+}
+
+
+.button-c {
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  background: #36006b;
+  border-radius: 40px;
+  padding: 8px 40px;
+  border: none;
+  transition: .5s ease;
+  box-shadow: rgba(54, 0, 107, 0.4) 5px 5px, rgba(54, 0, 107, 0.3) 10px 10px, rgba(54, 0, 107, 0.2) 15px 15px, rgba(54, 0, 107, 0.1) 20px 20px, rgba(54, 0, 107, 0.05) 25px 25px;
+}
+.button-c:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+.button-c:hover + .drip-c1{
+  height: 50px;
+}
+.button-c:hover ~ .drip-c2{
+  height: 90px;
+}
+.button-c:hover ~ .drip-c3{
+  height: 30px;
+}
+.drip-c1{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#a1a1a1;
+  margin: 0px 358px;
+  transition: height 0.9s ease;
+}
+.drip-c2{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#7914A3;
+  margin: 0px 379px;
+  transition: height 1.5s ease;
+}
+.drip-c3{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#5B005C;
+  margin: 0px 390px;
+  transition: height .7s ease;
+}
+
+.button-d {
+  color: #fff;
+  font-weight: normal;
+  font-size: 18px;
+  background: #36006b;
+  border-radius: 40px;
+  padding: 8px 40px;
+  border: none;
+  transition: .5s ease;
+  box-shadow: rgba(54, 0, 107, 0.4) 5px 5px, rgba(54, 0, 107, 0.3) 10px 10px, rgba(54, 0, 107, 0.2) 15px 15px, rgba(54, 0, 107, 0.1) 20px 20px, rgba(54, 0, 107, 0.05) 25px 25px;
+}
+.button-d:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+.button-d:hover + .drip-d1{
+  height: 50px;
+}
+.button-d:hover ~ .drip-d2{
+  height: 90px;
+}
+.button-d:hover ~ .drip-d3{
+  height: 30px;
+}
+.drip-d1{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#a1a1a1;
+  margin: 0px 542px;
+  transition: height 0.9s ease;
+}
+.drip-d2{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#7914A3;
+  margin: 0px 562px;
+  transition: height 1.5s ease;
+}
+.drip-d3{
+  position:absolute;
+  width:19px;
+  height:0px;
+  border-radius:0 0 21px 21px;
+  background:#5B005C;
+  margin: 0px 570px;
+  transition: height .7s ease;
+}
+
+}
+
+
