@@ -61,18 +61,7 @@ text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
     0 0 102px #000,
     0 0 151px #000;
 }
-.rightsd {
-    text-align: right;
-    color: #c4ff47;
-    a:link {
-      color: #c4ff47;
-      text-decoration: none;
-    }
-    a:visited {
-      color: #c4ff47;
-      text-decoration: none;
-    }
-  }
+  
 p.solid {border-style: solid;}
 
 div.box1 {
@@ -314,6 +303,22 @@ div.box2 {
   margin: 0px 570px;
   transition: height .7s ease;
 }
+
+.eggs {
+    position: fixed;
+    color: #c4ff47;
+    bottom: 15px;
+    right: 15px;
+    a:link {
+      color: #c4ff47;
+      text-decoration: none;
+    }
+    a:visited {
+      color: $c4ff47;
+      text-decoration: none;
+    }
+  }
+
 
 }
 
