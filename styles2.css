@@ -62,7 +62,6 @@ text-shadow: 0px 0px 151px 71px rgba(106,20,204,0.9);
     0 0 151px #000;
 }
 .rightsd {
-    text-align: right;
     color: #c4ff47;
     a:link {
       color: #c4ff47;
@@ -317,10 +316,18 @@ div.box2 {
 
 .button-corner {
   position: fixed;
+  color: #c4ff47;
   bottom: 20px;
   right: 20px;
+  a:link {
+      color:#c4ff47;
+      text-decoration: none;
+    }
+    a:visited {
+      color:#c4ff47;
+      text-decoration: none;
+    }
 }
-
 
 }
 
