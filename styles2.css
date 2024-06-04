@@ -315,15 +315,10 @@ div.box2 {
   transition: height .7s ease;
 }
 
-.eggs {
-  justify-content: space-between;
-  flex-direction: column;
-  height: 100vh;
-  display: flex;
-}
-.eggs .eggsHolder {
-  justify-content: flex-end;
-  display: flex;
+.button-corner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 
