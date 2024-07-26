@@ -82,6 +82,10 @@ div.box2 {
     z-index: 99;
   }
 
+.flexbox01{
+display: flex;
+}
+
 .container{
     position: relative;
     max-width: 9999px;
