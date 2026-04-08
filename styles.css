@@ -80,6 +80,7 @@ div.box2 {
     border: 3px solid #36006b;
     background-color: #000000;
     z-index: 99;
+    min-height: 80vh;
   }
 
 .flexbox01{
