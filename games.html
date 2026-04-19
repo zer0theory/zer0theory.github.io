@@ -3,27 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse all Zerotheory Games - Dark horror TTRPGs, one-page RPGs, and card games.">
-  <meta name="keywords" content="tabletop RPG, board games, TTRPG, dark horror, card games, one-page RPG, Dawn of the Eschaton, Wasteland Escorts, Nosferatu">
-  <meta name="author" content="Zerotheory Games">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://zer0theory.github.io/games.html">
-  
-  <meta property="og:title" content="Games - Zerotheory Games">
-  <meta property="og:description" content="Browse our collection of dark horror tabletop RPGs and card games.">
-  <meta property="og:image" content="https://zer0theory.github.io/images/dote-cover00.png">
-  <meta property="og:url" content="https://zer0theory.github.io/games.html">
-  <meta property="og:type" content="website">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Games - Zerotheory Games">
-  <meta name="twitter:description" content="Browse our collection of dark horror tabletop RPGs and card games.">
-  <meta name="twitter:image" content="https://zer0theory.github.io/images/dote-cover00.png">
-  
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
-  <title>Games - Zerotheory Games</title>
+  <title>Zerotheory Games</title>
 </head>
 <style>
 
@@ -34,6 +17,7 @@
 
   h1 {
     text-shadow: 0 0 30px #9400d3, 0 0 50px #96006b;
+    text-align: center;
   }
 
   .content-container {
@@ -58,14 +42,20 @@
 
   .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    max-width: 1024px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 900px) {
+    .games-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
     .games-grid {
       grid-template-columns: 1fr;
     }
@@ -161,7 +151,6 @@
       <div class="description">
         A Dark Horror Tabletop Roleplaying Game set in our world present day in which something very bad has happened. The world is now engulfed in complete darkness. No sunlight, no moonlight, no stars shining anywhere. Electricity no longer functions. Current does not flow through wires. Any source of light, typically from flame, penetrates the darkness just mere feet as if the air itself is thick with this Dark.
         <br><br>
-        Plants will soon be dead. Strange fungus is sprouting everywhere. Most animals have either died or seemed to have simply vanished. Not all animals are gone, however. As if by some force of the Darkness itself a few animals have quickly changed. Having traded their herbivorous nature for vicious meat-eating terrors. Food is quickly becoming scarce as it gets consumed by the roaches that seem to be able to chew their way through almost anything. All of that is the least of a players' problems, however, because supernatural monsters now hide in basements and closets or prowl the streets looking for anyone to kill.
       </div>
       <div class="quote">"It's not post-apocalyptic, it <b>IS</b> the apocalypse!"</div>
       <div class="links">
@@ -170,6 +159,28 @@
         <a href="resources/dote-character-sheet.pdf">Character Sheet</a>
         <a href="resources/dote-time-record-sheet.pdf">Time Record Sheet</a>
         <a href="3rdparty.html">3rd Party License</a>
+      </div>
+    </div>
+ 
+    <div class="game-card">
+      <h3>BeastRider Class for Shadowdark</h3>
+      <a href="https://www.drivethrurpg.com/en/product/553230/beastrider-class-for-shadowdark" target="_blank" style="text-decoration:none">
+        <img class="cover-image" src="images/553230.webp" alt="BeastRider Class for Shadowdark">
+      </a>
+      <div class="description">
+        <a href="https://www.drivethrurpg.com/en/product/553230/beastrider-class-for-shadowdark" target="_blank">BeastRider Class for Shadowdark</a> is a brand new class to expand your Shadowdark world! Mount your beast and go on adventures with your trusted companion.<br>
+          Options incudeed are: <br>
+          <ul style="list-style-type: circle;">
+            <li>Rhino</li>
+            <li>Direwolf</li>
+            <li>Bear</li>
+            <li>Sabertooth Tiger</li>
+            <li>Giant Monitor Lizard</li>
+            <li>Dire Boar</li>
+          </ul>
+      </div>
+      <div class="links">
+        <a href="https://www.drivethrurpg.com/en/product/553230/beastrider-class-for-shadowdark" target="_blank">Get it at drivethrurpg.com</a>
       </div>
     </div>
 
