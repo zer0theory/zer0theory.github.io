@@ -3,29 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zerotheory Games - Dark horror tabletop roleplaying games and card games. Home of Dawn of the Eschaton TTRPG.">
-  <meta name="keywords" content="tabletop RPG, board games, TTRPG, dark horror, card games, Dawn of the Eschaton">
-  <meta name="author" content="Zerotheory Games">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://zer0theory.github.io/games.html">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Zerotheory Games - Games">
-  <meta property="og:description" content="Dark horror tabletop roleplaying games and card games.">
-  <meta property="og:image" content="https://zer0theory.github.io/images/dote-cover00.png">
-  <meta property="og:url" content="https://zer0theory.github.io/games.html">
-  <meta property="og:type" content="website">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Zerotheory Games - Games">
-  <meta name="twitter:description" content="Dark horror tabletop roleplaying games and card games.">
-  <meta name="twitter:image" content="https://zer0theory.github.io/images/dote-cover00.png">
-  
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="styles.css">
-  <title>Zerotheory Games - Games</title>
+  <title>Zerotheory Games</title>
 </head>
 <style>
 
@@ -68,13 +49,13 @@
     padding: 0 15px;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     .games-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
     .games-grid {
       grid-template-columns: 1fr;
     }
@@ -126,9 +107,7 @@
   }
 
 </style>
-
 <body>
-  <p class="pad1"></p>
   <div class="box1">
     <a href="index.html" style="text-decoration:none">
       <button class="button-a" style="margin-right: 10px">Home</button>
@@ -142,13 +121,6 @@
       <div class="drip-b1"></div>
       <div class="drip-b2"></div>
       <div class="drip-b3"></div>
-    </a>
-
-    <a href="toys.html" style="text-decoration:none">
-      <button class="button-e" style="margin-right: 10px">Toys</button>
-      <div class="drip-e1"></div>
-      <div class="drip-e2"></div>
-      <div class="drip-e3"></div>
     </a>
 
     <a href="community.html" style="text-decoration:none">

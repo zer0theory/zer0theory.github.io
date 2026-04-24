@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zerotheory Games - Random generators for TTRPG names, towns, and more.">
+  <meta name="keywords" content="TTRPG tools, name generator, town generator, random generators">
+  <meta name="author" content="Zerotheory Games">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zer0theory.github.io/toys.html">
+  
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Zerotheory Tools</title>
+</head>
+<style>
+  body {
+    font-family: 'Roboto';
+    font-size: 22px;
+  }
+
+  h1 {
+    text-shadow: 0 0 30px #9400d3, 0 0 50px #96006b;
+    text-align: center;
+  }
+
+  h2 {
+    text-shadow: 0 0 20px #9400d3;
+    margin-top: 30px;
+  }
+
+  .generator-section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 2px solid #36006b;
+    border-radius: 8px;
+    background-color: #0a0015;
+  }
+
+  .result-display {
+    font-size: 28px;
+    min-height: 60px;
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid #5a008a;
+    border-radius: 4px;
+    background-color: #000000;
+    text-align: center;
+    color: #e0e0e0;
+  }
+
+  .generate-btn {
+    color: #fff;
+    font-weight: normal;
+    font-size: 18px;
+    background: #36006b;
+    border-radius: 40px;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease;
+    box-shadow: rgba(54, 0, 107, 0.4) 5px 5px, rgba(54, 0, 107, 0.3) 10px 10px;
+  }
+
+  .generate-btn:hover {
+    background: #5a00b0;
+    box-shadow: none;
+  }
+
+  .generator-description {
+    font-size: 16px;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+  }
+
+  .options-row {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #36006b;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9800ff;
+  }
+</style>
+
+<body>
+  <p class="pad1"></p>
+  <div class="box1">
+    <a href="index.html" style="text-decoration:none">
+      <button class="button-a" style="margin-right: 10px">Home</button>
+      <div class="drip-a1"></div>
+      <div class="drip-a2"></div>
+      <div class="drip-a3"></div>
+    </a>
+
+    <a href="games.html" style="text-decoration:none">
+      <button class="button-b" style="margin-right: 10px">Games</button>
+      <div class="drip-b1"></div>
+      <div class="drip-b2"></div>
+      <div class="drip-b3"></div>
+    </a>
+
+    <a href="toys.html" style="text-decoration:none">
+      <button class="button-e" style="margin-right: 10px">Toys</button>
+      <div class="drip-e1"></div>
+      <div class="drip-e2"></div>
+      <div class="drip-e3"></div>
+    </a>
+
+    <a href="community.html" style="text-decoration:none">
+      <button class="button-c" style="margin-right: 10px">Community</button>
+      <div class="drip-c1"></div>
+      <div class="drip-c2"></div>
+      <div class="drip-c3"></div>
+    </a>
+
+    <a href="about.html" style="text-decoration:none">
+      <button class="button-d" style="margin-right: 10px">About</button>
+      <div class="drip-d1"></div>
+      <div class="drip-d2"></div>
+      <div class="drip-d3"></div>
+    </a>
+  </div>
+
+  <p class="pad1"></p>
+  <h1>Random Generators</h1>
+  <p class="pad1"></p>
+
+  <div class="box2">
+    <div class="generator-section">
+      <h2>Grimdark Fantasy Town Name Generator</h2>
+      <p class="generator-description">Generate names for grimdark fantasy towns.</p>
+      <div class="options-row">
+        <button class="generate-btn" onclick="generateTown()">Generate Town</button>
+        <button class="generate-btn" onclick="generateTowns(3)">x3</button>
+      </div>
+      <div class="result-display" id="town-result">Click a button to generate</div>
+    </div>
+
+    <div class="generator-section">
+      <h2>Ultimate TTRPG Name Generator</h2>
+      <p class="generator-description">Generate epic character names with multiple format options.</p>
+      <div class="options-row">
+        <button class="generate-btn" onclick="generateUltimate('first-last')">First Last</button>
+        <button class="generate-btn" onclick="generateUltimate('first-nickname-last')">First Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('first-the-nickname-last')">First The Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('first-adj-nickname-last')">First Adj Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('first-the-adj-nickname-last')">First The Adj Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('nickname-first')">Nick First</button>
+        <button class="generate-btn" onclick="generateUltimate('nickname-last')">Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('adj-nickname-first')">Adj Nick First</button>
+        <button class="generate-btn" onclick="generateUltimate('adj-nickname-last')">Adj Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('the-nickname-first')">The Nick First</button>
+        <button class="generate-btn" onclick="generateUltimate('the-nickname-last')">The Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('the-adj-nickname-first')">The Adj Nick First</button>
+        <button class="generate-btn" onclick="generateUltimate('the-adj-nickname-last')">The Adj Nick Last</button>
+        <button class="generate-btn" onclick="generateUltimate('random')">Random</button>
+      </div>
+      <div class="result-display" id="name-result">Click a button to generate</div>
+    </div>
+  </div>
+
+  <div class="eggs">
+    <a href="https://github.com/zer0theory">π</a>
+  </div>
+
+</body>
+
+<script>
+const firstNames = [
+"Aaliyah", "Aaron", "Abigail", "Ada", "Adalaide", "Adaline", "Adalyn", "Adalynn", "Adam", "Addison",
+"Adelina", "Adeline", "Adelyn", "Adelynn", "Adriana", "Ahmed", "AJ", "Al", "Alaia", "Alaina",
+"Alan", "Alana", "Alani", "Alaya", "Alayna", "Albert", "Alessia", "Alex", "Alexander", "Alexandria",
+"Alexis", "Alice", "Alina", "Alivia", "Aliyah", "Allison", "Alora", "Alyssa", "Amanda", "Amara",
+"Amari", "Amaya", "Amelia", "Amina", "Amira", "Amy", "Ana", "Anastasia", "Andrea", "Andrew",
+"Andy", "Angela", "Angelina", "Aniyah", "Ann", "Anna", "Annabelle", "Annie", "Anthony", "Arabella",
+"Aria", "Ariana", "Arianna", "Ariel", "Ariella", "Arthur", "Arya", "Ashley", "Aspen", "Athena",
+"Aubree", "Aubrey", "Audrey", "Austin", "Author", "Autumn", "Ava", "Avery", "Ayla", "Bailey",
+"Barbara", "Bella", "Ben", "Benjamin", "Beth", "Betty", "Beverly", "Billy", "Blair", "Blake",
+"Blakely", "Bobby", "Bradley", "Brandon", "Branson", "Brian", "Brianna", "Briella", "Brielle",
+"Brooke", "Brooklyn", "Brooklynn", "Bruce", "Bryan", "Brynlee", "Brynn", "Butch", "Caleb", "Cali",
+"Callie", "Camila", "Camille", "Carl", "Carol", "Caroline", "Catalina", "Catherine", "Celeste", "Celine",
+"Charlee", "Charles", "Charlie", "Charlotte", "Cheryl", "Chet", "Chloe", "Chris", "Christian", "Christopher",
+"Claire", "Clara", "Clarence", "Coen", "Colin", "Cooper", "Cora", "Cynthia", "Dahlia", "Daisy",
+"Dakota", "Dan", "Daniel", "Daniela", "Danna", "Danny", "Daphne", "Dave", "David", "Delaney",
+"Delilah", "Demi", "Dennis", "Destiny", "Diana", "Diane", "Don", "Donald", "Donna", "Dorothy",
+"Doug", "Douglas", "Dream", "Dylan", "Eden", "Edward", "Elaina", "Elena", "Elias", "Elijah", "Elise",
+"Eliza", "Elizabeth", "Ella", "Ellana", "Elle", "Elliana", "Ellie", "Eloise", "Elsie", "Ember",
+"Emerseon", "Emersyn", "Emery", "Emilia", "Emily", "Emma", "Eric", "Erik", "Esme", "Esmeralda",
+"Esther", "Ethan", "Eugene", "Eva", "Evangeline", "Evelyn", "Evelynn", "Everlee", "Everleigh",
+"Everly", "Evie", "Ezekiel", "Faith", "Fatima", "Finley", "Fiona", "Frank", "Freya", "Gabriel",
+"Gabriela", "Gabriella", "Garry", "Gary", "Gemma", "Genevieve", "George", "Georgie", "Gerald", "Gia",
+"Gianna", "Giselle", "Gloria", "Grace", "Gracelynn", "Gracie", "Greg", "Gregory", "Hadley",
+"Hailey", "Hallie", "Han", "Hannah", "Harley", "Harlow", "Harmony", "Harold", "Haven", "Hayden",
+"Hazel", "Heather", "Heidi", "Helen", "Henry", "Hope", "Irene", "Iris", "Isabel", "Isabella",
+"Isabelle", "Ivy", "Jack", "Jacob", "Jacqueline", "Jade", "James", "Jane", "Janet", "Janice",
+"Jasmine", "Jason", "Jaycee", "Jayla", "Jazlynn", "Jeff", "Jeffrey", "Jeremy", "Jerry", "Jesse",
+"Jessica", "Jim", "Joan", "Joanne", "Joanna", "Jocelyn", "Joe", "John", "Jonathan", "Jordan", "Jordyn",
+"Jose", "Josephine", "Josh", "Joshua", "Josiah", "Josie", "Journey", "Joyce", "Juan", "Judy",
+"Julia", "Julian", "Juliana", "Juliet", "Juliette", "June", "Juniper", "Jurnee", "Justin", "Kaia",
+"Kailani", "Kalani", "Kali", "Kalvin", "Kamila", "Karen", "Kary", "Katherine", "Kathleen", "Kaycee",
+"Kayla", "Kaylani", "Kaylee", "Kehlani", "Keith", "Ken", "Kendall", "Kennedy", "Kenneth", "Kenny",
+"Kevin", "Khloe", "Kiara", "Kim", "Kimberly", "Kinsley", "Kira", "Kyle", "Kylie", "Kynlee",
+"Laila", "Lainey", "Larry", "Laura", "Lauren", "Lawrence", "Layla", "Leah", "Leia", "Leila",
+"Leilani", "Lena", "Lennon", "Leo", "Levi", "Lia", "Lila", "Lilah", "Liliana", "Lilith",
+"Lillian", "Lilly", "Lily", "Linda", "Lizzy", "Logan", "Lola", "London", "Londyn", "Lori",
+"Lucas", "Lucia", "Luciana", "Lucille", "Lucy", "Luna", "Lydia", "Lyla", "Lynette", "Mabel",
+"Mackenzie", "Madeline", "Madelyn", "Madilyn", "Madison", "Maeve", "Maggie", "Magnolia", "Malachi",
+"Malia", "Margaret", "Margot", "Maria", "Mariah", "Mariana", "Marilyn", "Mark", "Marley", "Mary",
+"Mason", "Matt", "Matthew", "Maurice", "Maximilian", "Maya", "Mae", "Mckenna", "Mckenzie", "Megan",
+"Melanie", "Melissa", "Melody", "Mia", "Michael", "Mike", "Mila", "Milani", "Miles", "Millie", "Miriam",
+"Molly", "Mordechai", "Morgan", "Mya", "Myla", "Naomi", "Natalia", "Natalie", "Nataly", "Nate",
+"Nathan", "Nayeli", "Nevaeh", "Nicholas", "Nick", "Nina", "Noa", "Noah", "Nora", "Norah",
+"Nova", "Nyla", "Oakley", "Octavia", "Olive", "Oliver", "Olivia", "Omar", "Ophelia", "Oscar",
+"Owen", "Paige", "Palmer", "Parker", "Patricia", "Patrick", "Paul", "Payton", "Penelope",
+"Pete", "Peter", "Peyton", "Philip", "Phoebe", "Phoenix", "Piper", "Poppy", "Pops",
+"Presley", "Quinn", "Rachel", "Raelynn", "Ralph", "Randy", "Raquel", "Ray", "Raymond",
+"Reagan", "Rebecca", "Reese", "Regina", "Reign", "Remi", "Riley", "River", "Rob",
+"Robert", "Roger", "Ron", "Ronald", "Rory", "Rosalie", "Rose", "Rowan", "Roy", "Ruby",
+"Russell", "Ruth", "Ryan", "Rylee", "Ryleigh", "Sadie", "Sage", "Saige", "Sally", "Sam",
+"Samantha", "Samara", "Sammy", "Samuel", "Sandra", "Sara", "Sarah", "Savannah", "Sawyer", "Saylor",
+"Scarlett", "Scott", "Scotty", "Sean", "Selena", "Serena", "Serenity", "Shiloh", "Sienna",
+"Skylar", "Sloane", "Sofia", "Sophia", "Sophie", "Stella", "Stephanie", "Stephen", "Steve",
+"Steven", "Stevie", "Summer", "Susan", "Sutton", "Sydney", "Talia", "Tallulah", "Tatum",
+"Taylor", "Teagan", "Teresa", "Terrence", "Terry", "Tessa", "Thea", "Thomas", "Tim", "TJ",
+"Tom", "Tony", "Trinity", "Tyler", "Valeria", "Valerie", "Vanessa", "Vera", "Victoria", "Vincent",
+"Violet", "Vivian", "Viviana", "Vivienne", "Walt", "Walter", "Wayne", "Willa", "Will", "William",
+"Willie", "Willow", "Winter", "Wren", "Wrenley", "Wynter", "Ximena", "Zachary", "Zack",
+"Zara", "Zoe", "Zoey", "Zuri",
+"Aldric", "Theron", "Cassius", "Lysander", "Darius", "Magnus", "Cassian", "Kael", "Ronan", "Declan",
+"Brennan", "Nolan", "Eoin", "Fionn", "Lorcan", "Kieran", "Stellan", "Soren", "Leif", "Odin", "Bjorn",
+"Ingrid", "Astrid", "Freya", "Sigrid", "Gunnar", "Erik", "Sven", "Harald",
+"Isolde", "Guinevere", "Morgana", "Elara", "Seraphina", "Rowena", "Lyra", "Celestine",
+"Arabella", "Evangeline", "Aurelia", "Lyanna", "Isadora", "Daphne", "Melisande", "Morrigan",
+"Rhiannon", "Bronwyn", "Seren", "Elspeth", "Moira", "Niamh", "Aoife", "Orla", "Saoirse",
+"Marcus", "Dante", "Atlas", "Caspian", "Zephyr", "Silas", "Ezra", "Milo", "Jasper", "Atticus",
+"Theodore", "Felix", "Adrian", "Sebastian", "Raphael", "Tobias", "Aurora", "Athena", "Celeste",
+"Luna", "Mira", "Aria", "Jade", "Pearl", "Sage", "Rue", "Flora", "Delilah", "Genevieve",
+"Morrigan", "Vivienne", "Elspeth", "Minerva", "Rhiannon", "Seraphina"
+];
+
+const lastNames = [
+"Winklebottom", "Cathorton", "Whodono", "Goldthwaith", "Johnsonne", "Finklebean", "Bonefat", "Broadbandd",
+"Burro", "Buttz", "Chew", "Crooks", "Daniels", "Delgado", "Bautista", "Baal", "Fang", "Gaywood",
+"Gaylord", "Gordy", "Grimm", "Hickinbottom", "Hogg", "Hogshead", "Lawless", "Looney",
+"Mahboobeh", "Medina", "Padilla", "Oz", "Pigg", "Pound", "Recker", "Rhammar", "Ruff", "Salem",
+"Saap", "Smuck", "Smalls", "Soto", "Snipes", "Stroker", "Ball", "Swett", "Tingle", "Wicker",
+"Zamora", "Bane", "Badman", "Begg", "Body", "Black", "White", "Green", "Brown", "Crumpe", "Doolittle",
+"Daft", "Duff", "Fairfax", "Drinkwater", "Flatman", "Greathead", "Hale", "Holder", "Lizar", "Long", "Loser",
+"Pigot", "Payne", "Shire", "Silverlocks", "Starkie", "Stern", "Stout", "Swift", "Trueman", "Turnbull", "Voss",
+"Wagstaff", "Weed", "Whitelocke", "Young", "Bacon", "Bich", "Blunderbuss", "Bodycomb", "Brain", "Butterworth",
+"Clevenger", "Clutterbuck", "Crumpet", "Dankworth", "Dork", "Faartz", "Fokker", "Futz", "Gobble",
+"Gotobed", "Kimchi", "Grasso", "Longbottom", "Moorehead", "Moxie", "Noodle", "Nutter", "Onions",
+"Peed", "Pelagatti", "Perv", "Popov", "Quibble", "Quirk", "Rasputin", "Rump", "Semenov", "Shufflebottom",
+"Snickersnee", "Snodgrass", "Supersad", "Tickle", "Uranus", "Wacko", "Wienke", "Wiwi", "Yazzie", "Ziggurat",
+"Alcock", "Baal", "Bottom", "Rosebottom", "Bich", "Cox", "Dickinson", "Duck", "Fanny", "Gorey",
+"Snickerbottom", "Goggleworth", "Chuckleton", "Smellfinger", "Mermouf", "Tubersville", "Anderson", "Allen",
+"Adams", "Alvarez", "Alexander", "Aguilar", "Arnold", "Armstrong", "Andrews", "Alvarado", "Austin",
+"Acosta", "Avila", "Adkins", "Ali", "Arias", "Atkinson", "Abbott", "Ahmed", "Andersen", "Alfaro",
+"Ayers", "Avery", "Archer", "Amaya", "Aviles", "Anaya", "Amos", "Aleman", "Ackerman", "Brooks", "Burns",
+"Boyd", "Berry", "Burton", "Banks", "Bowman", "Burke", "Brady", "Buchanan", "Bowers", "Bautista",
+"Briggs", "Bass", "Bradford", "Beil", "Boyer", "Bond", "Beltran", "Booth", "Baxter", "Berg",
+"Beasley", "Blackwell", "Bullock", "Barr", "Berger", "Bravo", "Benjamin", "Boyle", "Bentley", "Bernal", "Bender",
+"Blackburn", "Bernard", "Best", "Bean", "Booker", "Burch", "Branch", "Bray", "Bird", "Bright", "Barrios",
+"Bolton", "Byers", "Blanco", "Britt", "Baez", "Bruno", "Byrne", "Bui", "Belcher", "Baca", "Bogg", "Boggs",
+"Burks", "Burris", "Bland", "Bermudez", "Burg", "Burt", "Battle", "Beatty", "Bloom", "Bullard",
+"Bowles", "Butts", "Block", "Beaver", "Bower", "Benoit", "Beal", "Betts", "Brewster", "Burkett",
+"Brand", "Bateman", "Beyer", "Banuelos", "Bledsoe", "Bryson", "Batista", "Barbosa", "Barraza",
+"Bernstein", "Bain", "Bauman", "Burrows", "Busch", "Bagley", "Boykin", "Bellamy", "Brunson",
+"Bustos", "Benedict", "Bueno", "Baer", "Boudreaux", "Boston", "Burk", "Bordain", "Bliss",
+"Beebe", "Bowser", "Breen", "Bowie", "Bull", "Bunn", "Barba", "Brant", "Blunt", "Clark",
+"Carter", "Collins", "Cook", "Chavez", "Castillo", "Cole", "Chen", "Castro", "Carroll", "Carpenter",
+"Chapman", "Carr", "Carson", "Cunningham", "Crawford", "Clarke", "Colon", "Casey", "Cobb",
+"Conner", "Cain", "Combs", "Chase", "Cisneros", "Clay", "Cordova", "Cuevas", "Chung", "Conrad",
+"Crosby", "Case", "Costa", "Crane", "Cano", "Coffey", "Cherry", "Cho", "Cantrell", "Compton",
+"Cotton", "Cheng", "Costello", "Craft", "Crowley", "Castellanos", "Chillders", "Crowe", "Camp",
+"Cramer", "Cash", "Connor", "Carranza", "Caballero", "Chin", "Courtney", "Coronado", "Chacon",
+"Couch", "Corbett", "Crabtree", "Coffman", "Clifton", "Crews", "Crow", "Crouch", "Conklin", "Crockett",
+"Clement", "Coates", "Cuellar", "Colvin", "Cartwright", "Cote", "Cahill", "Crocker", "Castle",
+"Kessell", "Cornelius", "Cullen", "Coyle", "Cope", "Caudill", "Cates", "Cao", "Crum", "Crenshaw",
+"Crain", "Crespo", "Culver", "Cavanaugh", "Crowell", "Coe", "Crandall", "Comer", "Chow", "Coon",
+"Currie", "Chong", "Cloud", "Coles", "Coughlin", "Call", "Crook", "Cheney", "Coburn", "Callaway",
+"Crawley", "Cooney", "Casper", "Cintron", "Concepcion", "Churchill", "Curley", "Carlin", "Cecil", "Cotter",
+"Cyr", "Choate", "Corrales", "Custer", "Cedillo", "Conti", "Crist", "Currier", "Chao", "Cosby",
+"Caputo", "Comstock", "Culpepper", "Caro", "Card", "Cone", "Chamberlin", "Davis", "Diaz", "Dixon",
+"Dunn", "Duncan", "Dean", "Day", "Doyle", "Drake", "Dalton", "Dillon", "Dickerson", "Decker",
+"Davenport", "Duke", "Davies", "Dudley", "Dodson", "Duffy", "Dodd", "Dang", "Do", "Dale", "Downing",
+"Dye", "Denton", "Dolan", "Delatorre", "Dwyer", "Dooley", "Drew", "Doan", "Darling", "Diehl", "Darby",
+"Dumas", "Duff", "Dozier", "Dias", "Deluca", "Dinh", "Dutton", "Dowdy", "Dowd", "Devries",
+"Duenas", "Denney", "Dong", "Durant", "Dewey", "Duggan", "Duckworth", "Dyson", "Doughty", "Delvalle",
+"Dorman", "Dockery", "Devore", "Daily", "Dexter", "Diehart", "Deegan", "Dame", "Dart", "Deleo",
+"Ellis", "Espinoza", "Escobar", "Edwards", "Enriquez", "Escobedo", "Elder", "Elkins", "Eldridge",
+"Ervin", "Emery", "Eddy", "Eckert", "Epps", "Espino", "Ennis", "Ebert", "East", "Erb",
+"Echevarria", "Eggleston", "Eads", "Elliot", "Embry", "Eden", "Erdman", "Emanuel", "Eberhardt",
+"Emerick", "Elmer", "Eberle", "Elston", "Emory", "Elizalde", "Eggert", "Elwell", "Escoto", "Esteban",
+"Eubank", "Eversole", "Egbert", "Eckman", "Ecker", "Encios", "Edgerton", "Endicott", "Floyd",
+"Frost", "Fitzpatrick", "Farley", "Felix", "Flynn", "Fry", "Fritz", "Frey", "Fulton", "Finch",
+"Franks", "Farris", "Fink", "Foreman", "Fraser", "Fish", "Funk", "Francisco", "Feldman", "Forrest",
+"Feliciano", "Finn", "Fountain", "Fontenot", "Farr", "Fair", "Fernandes", "Flaherty", "Fong",
+"Friend", "Fagan", "Flood", "Foote", "Farias", "Faust", "Felton", "Fenton", "Falcon", "Flint",
+"Foss", "Fairchild", "Forrester", "Ferrara", "Felder", "Fabian", "Fuchs", "Foy", "Foust", "Frantz",
+"Forte", "Falk", "Fallon", "France", "Fontaine", "Forman", "Fraly", "Fortune", "Faulk", "Fine",
+"Forsythe", "Franz", "Fennell", "Fultz", "Freitas", "Fanning", "Feng", "Farrow", "Florez", "Fugate",
+"Faber", "Ferry", "Fisk", "Fiore", "Frick", "Fulmer", "Freed", "Findley", "Feeney", "Flick",
+"Fain", "Fellows", "Flora", "Falcone", "Ferro", "Falls", "Fazio", "Fried", "Fawcett", "McSnazzy",
+"Pimpel", "Bubblpoof", "Wizthorpe", "Fussbudgett", "Jingleheim", "Silimuff", "Flapnoodle", "Wimbledone",
+"Snuffle", "Grimlagrime", "Jigglewater", "Drinkwater", "Snarfle", "Wizzlewak",
+" Grimtooth", "Mudslurp", "Trollhammer", "Grimbeard", "Ironcrotch", "Doombellow", "Bloodvein",
+"Nightshade", "Shadowmend", "Bonecrusher", "Fleshripper", "Skullgrinder", "Doomhammer", "Ironbeard",
+"Wolfspine", "Stormborn", "Ashendale", "Thornwood", "Ravencrest", "Darkhollow", "Blackbriar",
+"Goldweaver", "Silvermane", "Ironfist", "Stoneheart", "Frostfang", "Emberforge", "Thunderpeak",
+"Mudcrunch", "Bogtrotter", "Swampwhisper", "Mossfoot", "Fernglade", "Briarwood", "Oakenshield",
+"Wortquick", "Thistlebrook", "Honeysuckle", "Bramblewick", "Mallowpond", "Featherstone",
+"Wobblesnoot", "Flopsywumps", "Noodlebucket", "Zimzam", "Quibblefuss", "Wobbleknob",
+"Gobbledygook", "Snicklefritz", "Bumblegumption", "Flimflammery", "Dill picklebottom",
+"Picklejuice", "Cabbagetown", "Turnipton", "Lumpyjuggs", "Bumblebees", "Muffintop",
+"Hamburgerpants", "Wogglesquish", "Fuzzbucket", "Snickerdoodle", "Rumplestiltskin",
+"Wogglesworth", "Bogglesnoot", "Flapjackton", "Picklebottom", "Cucumberpatch",
+"Bumblethorp", "Wobbleworth", "Snickerdoodle", "Crumpleton", "Giggleworth",
+"Quirklemarsh", "Wobblejuice", "Snicklefritz", "Bumblebee", "Flapjacksworth",
+"Pickletons", "Ziggleworth", "Bumblegumps", "Flimflamsworth", "Snickerdoodlebottom",
+"Ironbottom", "Tinwhistle", "Copperfield", "Brassknuckle", "Tinhat", "Ironpants",
+"Steeltoe", "Leadfoot", "Goldtooth", "Silvervein", "Bronzebottom", "Copperbottom",
+"Grumbold", "Thickbottom", "Wobblebottom", "Squishworth", "Bumblegum",
+"Flapjacksworth", "Snickelsworth", "Picklesworth", "Wogglesworth", "Zigglebottom",
+"Bumblethorp", "Wobbleknob", "Snicklefritzworth", "Quirklebottom", "Bogglesworth",
+"Snickeldoodle", "Wogglesnootworth", "Flapjacksworth", "Picklesworth",
+"Noodlesworth", "Gumdropsworth", "Bumbleworth", "Snickerworth",
+"Twistletoes", "Wobblejinks", "Snicklefritz", "Bogglesnort", "Flapjacksworth",
+"Picklebottom", "Wogglesworth", "Zigglebottom", "Quirklesworth",
+"Grimtoothe", "Bloodypoole", "Deadmanshoe", "Skullcrusher", "Gravepicker",
+"Cryptwhisper", "Coffindancer", "Gallowsfoot", "Ropeend", "Gallowsgait",
+"Nosferatufur", "Vladspark", "Draculafart", "Bramston", "Stokerbottom",
+"Fangworth", "Bloodgood", "Gravegood", "Coffingood", "Crypticgood",
+"Darkhollow", "Shadowmere", "Nightshade", "Thornback", "Blackbriar",
+"Wraithwood", "Ghostwhisper", "Phantomstep", "Spectercroft", "Apparitionhall",
+"Grimwade", "Mordrake", "Blackwood", "Ravenscar", "Hollowgate",
+"Stonefist", "Ironfist", "Steelgrip", "Bronzehand", "Copperclaw", "Tin claw",
+"Goldgrip", "Silverfist", "Leadgrip", "Ironclaw", "Steelhand",
+"Grimli", "Balinson", "Thornson", "Gallowsby", "Coffingrove",
+"Ravencrag", "Stonebrook", "Ironford", "Silverstream", "Goldleaf",
+"Mossybrook", "Grassy glen", "Fernvale", "Briarcliff", "Thistlewood",
+"Oakenridge", "Willowmere", "Hawthorndale", "Elderwood", "Yewtree",
+"Fiddlehead", "Mushroomcap", "Glowshroom", "Biolum", "Nightbloom",
+"Starshine", "Moonbeam", "Sunflare", "Dawnbreak", "Twilightfall",
+"Nimblesprite", "Quickfoot", "Fleetwind", "Swiftarrow", "Lightstep",
+"Shadowmeld", "Duskwalker", "Dawnpatrol", "Nightrunner", "Stargazer"
+];
+
+const nicknames = [
+"Aardvark", "Ace", "Alligator", "Alpha", "Angler", "Ant", "Antelope", "Arctic Wolf", "Armadillo", "Assassin", "Axolotl",
+"Badger", "Balled Eagle", "Bambi", "Banana Spider", "Bandicoot", "Barbwire", "Barracuda", "Bat", "Bear", "Beast",
+"Beaver", "Beetle", "Big Butcher", "Big Snoot", "Bird", "Bison", "Bitmap", "Blackbird", "Black Mamba", "Black Widow",
+"Blades", "Bleach", "Blister", "Blondie", "Bobcat", "Bones", "Boo", "Books", "Boss", "Bowler",
+"Box", "Boxed In", "Brainiac", "Brains", "Bro", "Brown Recluse", "Bruh", "Bucket", "Buckshot", "Buffalo",
+"Bug", "Bull", "Bulldog", "Bullet", "Bumble Bee", "Butterfly", "Buzzard", "Caiman", "Camel", "Cardinal",
+"Caribou", "Caterpillar", "Catfish", "Centipede", "Champ", "Cheetah", "Chicken", "Chinchilla", "Chipmunk",
+"Chuckles", "Clobberer", "Cobra", "Code", "Coffee", "Comatose", "Commando", "Confessor", "Cool Whip", "Copperhead",
+"Coppertop", "Cosmo", "Cottonmouth", "Cougar", "Cow", "Coyote", "Crab", "Crazy Eye", "Crazy Eyes", "Cream",
+"Creamy", "Cricket", "Croc", "Crocodile", "Crow", "Cuckoo", "Cupcake", "Daddy", "Dancer", "Dandelion",
+"Danggggg", "Dark Horse", "Dark Light", "Dark Matter", "Dash", "Deadeye", "Decaf", "Deer", "Delicious", "Deuce",
+"Diamond", "Dice", "Dingo", "Doctor", "Dog", "Dolphin", "Dove", "Dragon", "Dragonfly", "Drama",
+"Dreamer", "Dreamweaver", "Dropkick", "Duck", "Duckie", "Dude", "Dung Beetle", "Eagle", "Earthworm", "Eel",
+"Egghead", "Elephant", "Elf", "Elk", "Emu", "Enforcer", "Eye Candy", "Eyes", "Ferret", "Fighting Fish",
+"Finch", "Fire", "Firecracker", "Firefly", "Flake", "Flame", "Flamingo", "Flatworm", "Flint", "Flycatcher",
+"Fox", "Foxy", "Freak", "Freckles", "Frog", "Frostbite", "FUBAR", "Fungus", "Funnelweb", "Gazelle",
+"Gerbil", "Giraffe", "Gladiator", "Glyph", "Goat", "Goldfish", "Goose", "Granite", "Grasshopper", "Grave Digger",
+"Greased Lightning", "Groundhog", "Guns", "Guppy", "Hammerhead", "Hamster", "Hawk", "Hedgehog", "Hippo",
+"Hippopotamus", "Hollowpoint", "Honey Bee", "Hornet", "Hound", "Hulk", "Hyena", "Hyper", "Iguana", "Jackal",
+"Jellyfish", "Jester", "Joker", "Junkyard Dog", "Kangaroo", "Keystone", "Killer", "Killer Bee", "Kill Switch",
+"Kitty Cat", "Knee Caps", "Knuckles", "Koala", "Komodo Dragon", "Kong", "Krill", "Ladybug", "Legs",
+"Lightning", "Lion", "Lips", "Little Bird", "Lizard", "Llama", "Lobster", "Lynx", "Macaw", "Mad Dog",
+"Mammoth", "Manatee", "Marbles", "Marshmallow", "Meerkat", "Mental", "Mercury", "Millipede", "Mockingbird", "Mole",
+"Mommy", "Mongoose", "Moon", "Moose", "Moth", "Mouse", "Movie Time", "Mud Dobber", "Muffin", "Muscle", "Muscles",
+"Mushroom", "Nacho", "Necktie", "Newt", "Night Train", "Ninja", "Nostrils", "Nurse", "Ocelot", "Octopus", "Ogre",
+"One", "Opossum", "Ostrich", "Otter", "Owl", "Panda", "Papa Bear", "Pelican", "Penguin", "Pheasant",
+"Pie", "Pig", "Planet", "Platypus", "Player", "Pluto", "Polar Bear", "Porcupine", "Possum", "Potato Chip",
+"Prairie Dog", "Praying Mantis", "Pufferfish", "Puffin", "Puma", "Pusher", "Python", "Quartz", "Rabbit", "Raccoon",
+"Racer", "Rattler", "Rattlesnake", "Raven", "Rebel", "Recluse", "Redneck", "Reef Shark", "Rhino", "Rhinoceros",
+"Rifle", "Roadblock", "Roadspike", "Rogue", "Ronin", "Rook", "Rooster", "Rug-Rat", "Samurai", "Sandbox",
+"Sasquatch", "Seagull", "Seahorse", "Seal", "Sea Lion", "Sea Snake", "Sea Urchin", "Serpent", "Shadow", "Shark",
+"Sheep", "Shoe String", "Shooter", "Shotgun", "Shrew", "Six Shooter", "Skunk", "Sleepwalker", "Sloth", "Slug",
+"Smurf", "Snack Eyes", "Snail", "Snake", "Sofa King", "Space Boy", "Spark", "Sparks", "Speedy", "Sperm Whale",
+"Spider", "Spooky", "Squeaky", "Squid", "Squirrel", "Stag Beetle", "Stallion", "Star", "Stingray", "Stink Bug",
+"Street", "Sub Woof", "Sun", "Sunshine", "Sushi", "Swan", "Sweet Pee", "Swine", "Switchblade", "Swordfish",
+"Tarantula", "Tart", "Tater Tot", "Termite", "Thin Mint", "Thunder", "Tiger", "Titan", "Toe", "Tomcat",
+"Tortoise", "Toucan", "Trapdoor Spider", "Trash", "T-Rex", "Troll", "Trouble", "Turkey", "Turtle", "Twitch",
+"Universe", "Urchin", "Vampire Bat", "Vixen", "Vole", "Vortex", "Vulture", "Wallaby", "Walrus", "Warthog", "Wasp",
+"WD40", "Weasel", "Weevil", "Whale", "Wheels", "Whitey", "Whoopie", "Wolf", "Wombat", "Woogie", "Worm",
+"Wrecking Ball", "Wuggle", "Yak", "Yeti", "Yummy", "Zebra",
+"Blitz", "Bolt", "Cinder", "Ember", "Flint", "Frost", "Gale", "Haze", "Mist", "Nova",
+"Spark", "Storm", "Tempest", "Thunder", "Volt", "Blaze", "Char", "Ash", "Coal", "Soot",
+"Spectre", "Phantom", "Wraith", "Shade", "Ghost", "Spirit", "Wisp", "Shade", "Poltergeist",
+"Basilisk", "Chimera", "Griffin", "Hydra", "Manticore", "Sphinx", "Wyrm", "Wyvern", "Drake",
+"Fae", "Imp", "Sprite", "Nymph", "Sylvan", "Dryad", "Wisp", "Will-o-Wisp",
+"Grave", "Crypt", "Crypt Keeper", "Grim", "Harbinger", "Omen", "Harbinger", "Fate", "Doom",
+"Razor", "Blade", "Spike", "Fang", "Claw", "Talon", "Dagger", "Scythe", "Halberd", "Mace",
+"Skull", "Bone", "Marrow", "Sinew", "Vex", "Vex", "Nox", "Umbra", "Void", "Null",
+"Chill", "Shiver", "Quake", "Rumble", "Rupture", "Crack", "Fissure", "Rift", "Gash", "Gore",
+"Snag", "Splinter", "Shard", "Brittle", "Rust", "Corrode", "Erode", "Warp", "Twist", "Bend",
+"Cackle", "Chuckle", "Giggle", "Grin", "Grimace", "Snarl", "Growl", "Hiss", "Howl", "Wail",
+"Bane", "Scourge", "Plague", "Scourge", "Ravager", "Savage", "Brute", "Marauder", "Raider",
+"Fury", "Rage", "Wrath", "Ire", "Spite", "Malice", "Vengeance", "Retribution", "Judgment",
+"Chaos", "Mayhem", "Pandemonium", "Anarchy", "Entropy", "Oblivion", "Entropy", "Nexus",
+"Quake", "Tremor", "Aftershock", "Reckoning", "Judgment", "Inferno", "Conflagration", "Eruption",
+"Snap", "Crackle", "Pop", "Bang", "Boom", "Blast", "Burst", "Fracture", "Shatter",
+"Grimlock", "Ironhide", "Steelshank", "Bonejaw", "Skullcap", "Fleshripper", "Gutwrench",
+"Bloodknot", "Veinpop", "Gutsnipe", "Snotflick", "Mudlark", "Gravelgut", "Ironbelly",
+"Grumblebone", "Croakbottom", "Wartsworth", "Snagtooth", "Gumption", "Knucklebone",
+"Snickle", "Wobbles", "Flumph", "Grumple", "Squidgely", "Blubberbutt", "Wobbleknob",
+"Mudmunch", "Graveltooth", "Snaggletooth", "Crookshank", "Bumblethorn", "Wortwart",
+"Nettleman", "Bramblesnap", "Thornback", "Hedgehog", "Mosshead", "Fernwhisker",
+"Dawnbreak", "Duskfall", "Midnight", "Highnoon", "Stardust", "Moonquake", "Sunburst",
+"Eclipse", "Equinox", "Solstice", "Waning", "Waxing", "Crescent", "Fullmoon", "Bloodmoon",
+"Gloom", "Dim", "Murk", "Haze", "Fog", "Mist", "Gloom", "Shade", "Dusk", "Twilight",
+"Pixel", "Byte", "Glitch", "Lag", "Lagomorph", "Bug", "Crash", "Hack", "Loop", "Core",
+"Flux", "Pulse", "Wave", "Surge", "Rush", "Flow", "Stream", "Tide", "Ripple", "Riptide",
+"Bounce", "Boing", "Squeak", "Skree", "Clang", "Clank", "Ding", "Chime", "Bong", "Clunk",
+"Quack", "Moo", "Baa", "Oink", "Ribbit", "Croak", "Chirp", "Tweet", "Hoot", "Howl",
+"Flip", "Flop", "Slap", "Smack", "Whap", "Thwack", "Bonk", "Clonk", "Ding", "Thunk"
+];
+
+function randomItem(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+const formats = [
+  "first-last", "first-nickname-last", "first-the-nickname-last", "first-adj-nickname-last",
+  "first-the-adj-nickname-last", "nickname-first", "nickname-last", "adj-nickname-first",
+  "adj-nickname-last", "the-nickname-first", "the-nickname-last", "the-adj-nickname-first",
+  "the-adj-nickname-last"
+];
+
+function generateUltimate(format) {
+  if (format === 'random') {
+    format = randomItem(formats);
+  }
+  
+  const parts = format.split('-');
+  let name = parts.map(part => {
+    switch(part) {
+      case 'first': return randomItem(firstNames);
+      case 'last': return randomItem(lastNames);
+      case 'nickname': return randomItem(nicknames);
+      case 'adj': return randomItem(adjectives);
+      case 'the': return 'The';
+      default: return part;
+    }
+  }).join(' ');
+  
+  document.getElementById('name-result').textContent = name;
+}
+
+const adjectives = [
+"Aback", "Abaft", "Abandoned", "Abashed", "Aberrant", "Abhorrent", "Abiding", "Abject", "Ablaze",
+"Able", "Abnormal", "Aboard", "Aboriginal", "Abortive", "Abounding", "Abrasive", "Abrupt", "Absent",
+"Absorbed", "Absorbing", "Abstracted", "Absurd", "Abundant", "Abusive", "Abysmal", "Acceptable",
+"Accessible", "Accidental", "Accurate", "Accused", "Acid", "Acidic", "Acoustic", "Acrid", "Actually",
+"Adamant", "Addicted", "Adept", "Adorable", "Adventurous", "Aggressive", "Agitated", "Alert", "Alive",
+"Aloof", "Amiable", "Amused", "Angry", "Annoyed", "Annoying", "Antsy", "Anxious", "Appalling",
+"Appetizing", "Apprehensive", "Arrogant", "Ashamed", "Astonishing", "Attractive", "Average",
+"Awful", "Bad", "Barbarous", "Bashful", "Batty", "Bawdy", "Beautiful", "Beefy", "Befitting",
+"Belligerent", "Beneficial", "Bent", "Berserk", "Best", "Better", "Bewildered", "Big", "Billowy",
+"Bite-Sized", "Biting", "Bitter", "Bizarre", "Black", "Black-And-White", "Bland", "Bloody",
+"Blue", "Blue-Eyed", "Blurry", "Blushing", "Boiling", "Boorish", "Bored", "Boring", "Bouncy",
+"Boundless", "Brainy", "Brave", "Brawny", "Breakable", "Breezy", "Brief", "Bright", "Broad",
+"Broken", "Brown", "Bulky", "Bumpy", "Burly", "Bustling", "Busy", "Cagey", "Calculating",
+"Callous", "Calm", "Capable", "Capricious", "Captain", "Careful", "Careless", "Caring", "Cautious",
+"Ceaseless", "Certain", "Changeable", "Charming", "Cheap", "Cheeky", "Cheerful", "Chemical",
+"Chief", "Childlike", "Chilly", "Chivalrous", "Chubby", "Chunky", "Clammy", "Classy", "Clean",
+"Clear", "Clever", "Cloistered", "Closed", "Cloudy", "Clueless", "Clumsy", "Cluttered",
+"Coherent", "Cold", "Colonel", "Colorful", "Colossal", "Combative", "Comfortable", "Common",
+"Complete", "Complex", "Concerned", "Condemned", "Condescending", "Confused", "Conscious", "Contemplative",
+"Convincing", "Convoluted", "Cooing", "Cool", "Cooperative", "Coordinated", "Corny", "Corporal",
+"Costly", "Courageous", "Cowardly", "Crabby", "Crazy", "Creepy", "Crooked", "Cruel", "Cuddly",
+"Cultured", "Cumbersome", "Curious", "Curly", "Curved", "Curvy", "Cut", "Cute", "Cynical",
+"Daffy", "Daily", "Damaged", "Damaging", "Damp", "Dangerous", "Dapper", "Dark", "Dashing",
+"Dazzling", "Dead", "Deadpan", "Deafening", "Dear", "Debonair", "Decayed", "Deceitful",
+"Decisive", "Decorous", "Deep", "Deeply", "Defeated", "Defective", "Defiant", "Delicate",
+"Delicious", "Delightful", "Delirious", "Demonic", "Dependent", "Depraved", "Depressed",
+"Deranged", "Descriptive", "Deserted", "Despicable", "Detailed", "Determined", "Devilish",
+"Different", "Difficult", "Dilapidated", "Diminutive", "Disgusted", "Distinct", "Distraught",
+"Distressed", "Disturbed", "Dizzy", "Drab", "Drained", "Dull", "Eager", "Early",
+"Earsplitting", "Earthy", "Easy", "Eatable", "Economic", "Ecstatic", "Educated", "Efficacious",
+"Efficient", "Eight", "Elastic", "Elated", "Elderly", "Electric", "Elegant", "Elfin", "Elite",
+"Emaciated", "Embarrassed", "Eminent", "Empty", "Enchanted", "Enchanting", "Encouraging",
+"Endurable", "Energetic", "Enormous", "Entertaining", "Enthusiastic", "Envious", "Equable",
+"Equal", "Erect", "Erratic", "Ethereal", "Evil", "Exasperated", "Excited", "Exhilarated",
+"Expensive", "Extensive", "Exuberant", "Fabulous", "Faded", "Faint", "Fair", "Faithful",
+"Fallacious", "False", "Familiar", "Famous", "Fanatical", "Fancy", "Fantastic", "Far", "Far-Flung",
+"Fascinated", "Fast", "Fat", "Faulty", "Fearful", "Fearless", "Feeble", "Feigned", "Female",
+"Fertile", "Festive", "Few", "Fierce", "Filthy", "Fine", "Flat", "Floppy", "Fluttering",
+"Foolish", "Frail", "Frantic", "Fresh", "Friendly", "Frightened", "Frightful", "Frothy",
+"Frustrating", "Funny", "Fuzzy", "Gabby", "Gainful", "Gallant", "Galling", "Game", "Gamy",
+"Gangly", "Gaping", "Garbled", "Gargantuan", "Garish", "Garrulous", "Gaseous", "Gasping",
+"Gaudy", "Gaunt", "Gauzy", "Gawky", "General", "Generative", "Generic", "Generous", "Gentile",
+"Gentle", "Genuine", "Geographic", "Geologic", "Geometric", "Geriatric", "Ghastly", "Ghostly",
+"Ghoulish", "Giant", "Giddy", "Gifted", "Gigantic", "Giggling", "Gilded", "Giving", "Glad",
+"Glamorous", "Glaring", "Glass", "Glassy", "Gleaming", "Glib", "Glistening", "Glittering",
+"Global", "Globular", "Gloomy", "Glorious", "Glossy", "Glowing", "Gluey", "Glum", "Gluttonous",
+"Gnarly", "Godly", "Gold", "Golden", "Good", "Good-Looking", "Gooey", "Goofy", "Gorgeous", "Graceful",
+"Gracious", "Gradual", "Grainy", "Grand", "Grandiose", "Graphic", "Grateful", "Gratified", "Grating",
+"Gratis", "Gratuitous", "Gray", "Greasy", "Green", "Grieving", "Gritty", "Grotesque", "Grubby",
+"Grumpy", "Habitual", "Half", "Hallowed", "Halting", "Handsome", "Handy", "Hanging", "Hapless",
+"Happy", "Hard", "Hard-To-Find", "Harebrained", "Harmonious", "Harsh", "Hateful", "Heady", "Healthy",
+"Heartbreaking", "Heavenly", "Heavy", "Hellish", "Helpful", "Helpless", "Hesitant", "Hideous",
+"High", "Highfalutin", "High-Pitched", "Hilarious", "Hissing", "Historical", "Holistic", "Hollow",
+"Homeless", "Homely", "Honorable", "Horrible", "Horrid", "Horrific", "Hospitable", "Hot", "Huge",
+"Hulking", "Humdrum", "Humorous", "Hungry", "Hurried", "Hurt", "Hushed", "Husky", "Hypnotic",
+"Hysterical", "Icky", "Icy", "Ideal", "Idiotic", "Ignorant", "Ill", "Illegal", "Ill-Fated",
+"Ill-Informed", "Illustrious", "Imaginary", "Immense", "Imminent", "Impartial", "Imperfect", "Impolite",
+"Important", "Imported", "Impossible", "Impressionable", "Incandescent", "Incompetent", "Inconclusive",
+"Incredible", "Industrious", "Inexpensive", "Infamous", "Innocent", "Inquisitive", "Insidious",
+"Instinctive", "Intelligent", "Interesting", "Internal", "Intrigued", "Invincible", "Irritable",
+"Irritating", "Itchy", "Jaded", "Jagged", "Jazzy", "Jealous", "Jittery", "Jobless", "Jolly",
+"Joyous", "Judicious", "Juicy", "Jumbled", "Jumpy", "Juvenile", "Kaput", "Keen", "Kind",
+"Kindhearted", "Kindly", "Knotty", "Knowing", "Known", "Labored", "Lackadaisical", "Lacking", "Lame",
+"Lamentable", "Languid", "Large", "Last", "Late", "Laughable", "Lavish", "Lazy", "Lean", "Learned",
+"Left", "Legal", "Lethal", "Level", "Lewd", "Light", "Like", "Likeable", "Limping", "Literate",
+"Little", "Lively", "Livid", "Living", "Lonely", "Long", "Longing", "Long-Term", "Loose",
+"Lopsided", "Loud", "Loutish", "Lovely", "Loving", "Low", "Lowly", "Lucky", "Ludicrous",
+"Lumpy", "Lush", "Luxuriant", "Lying", "Lyrical", "Macabre", "Macho", "Maddening", "Madly",
+"Magenta", "Magical", "Magnificent", "Majestic", "Makeshift", "Male", "Malicious", "Mammoth",
+"Maniacal", "Many", "Marked", "Married", "Marvelous", "Massive", "Material", "Materialistic",
+"Mature", "Mean", "Measly", "Meaty", "Medical", "Meek", "Melancholy", "Mellow", "Melodic",
+"Melted", "Merciful", "Mere", "Messy", "Mighty", "Military", "Milky", "Mindless", "Miniature",
+"Minor", "Minute", "Miscreant", "Mistaken", "Misty", "Mixed", "Moaning", "Modern", "Moldy",
+"Momentous", "Monstrous", "Moody", "Mortified", "Motionless", "Mountainous", "Muddled", "Muddy",
+"Mundane", "Murky", "Mushy", "Mute", "Mysterious", "Naive", "Nappy", "Narrow", "Nasty",
+"Natural", "Naughty", "Nauseating", "Near", "Neat", "Nebulous", "Necessary", "Needless", "Needy",
+"Neighborly", "Nervous", "New", "Next", "Nice", "Nifty", "Nimble", "Nine", "Nippy",
+"Noiseless", "Noisy", "Nonchalant", "Nondescript", "Nonsensical", "Nonstop", "Normal", "Nostalgic",
+"Noxious", "Null", "Numberless", "Numerous", "Nutritious", "Nutty", "Oafish", "Obedient", "Obeisant",
+"Obese", "Obnoxious", "Obscene", "Obsequious", "Observant", "Obsolete", "Obtainable", "Oceanic",
+"Odd", "Offbeat", "Old", "Old-Fashioned", "Omniscient", "One", "Onerous", "Open", "Opposite",
+"Optimal", "Orange", "Organic", "Ossified", "Outgoing", "Outrageous", "Outstanding", "Painful",
+"Painstaking", "Pale", "Paltry", "Panicky", "Panoramic", "Parched", "Parsimonious", "Past",
+"Pastoral", "Pathetic", "Peaceful", "Penitent", "Perfect", "Periodic", "Permissible", "Perpetual",
+"Petite", "Plain", "Pleasant", "Poised", "Polished", "Poor", "Powerful", "Precious", "Prickly",
+"Private", "Proud", "Pungent", "Puny", "Putrid", "Puzzled", "Quack", "Quaint", "Quarrelsome",
+"Questionable", "Quick", "Quickest", "Quiet", "Quirky", "Quixotic", "Quizzical", "Rabid", "Racial",
+"Ragged", "Rainy", "Rambunctious", "Rampant", "Rapid", "Rare", "Rascally", "Rash", "Rasping",
+"Raspy", "Rational", "Ratty", "Ravenous", "Raving", "Ravishing", "Raw", "Razor Edged", "Reactive",
+"Ready", "Real", "Realistic", "Reasonable", "Reassured", "Reassuring", "Rebel", "Rebellious", "Receding",
+"Recent", "Receptive", "Recessive", "Rechargeable", "Reciprocal", "Reckless", "Reclusive",
+"Recognizable", "Recognized", "Recondite", "Rectangular", "Rectifiable", "Recurrent", "Recyclable",
+"Referential", "Refillable", "Reflective", "Refractive", "Refreshing", "Refundable", "Refurbished",
+"Refutable", "Regal", "Regional", "Regretful", "Regrettable", "Regular", "Reining", "Relatable",
+"Relative", "Relaxed", "Relaxing", "Relevant", "Reliable", "Relieved", "Religious", "Reluctant",
+"Remaining", "Remarkable", "Remedial", "Reminiscent", "Remorseful", "Remorseless", "Remote",
+"Removable", "Renewable", "Rented", "Repairable", "Repaired", "Repulsive", "Resolute",
+"Resourceful", "Responsive", "Restrictive", "Rich", "Ripe", "Robust", "Rotten", "Rotund", "Rough",
+"Round", "Sable", "Sad", "Safe", "Salty", "Same", "Sarcastic", "Sassy", "Satisfying", "Savory",
+"Scandalous", "Scant", "Scarce", "Scared", "Scary", "Scattered", "Scientific", "Scintillating",
+"Scrawny", "Screeching", "Second", "Second-Hand", "Selfish", "Shaggy", "Shaky", "Shallow", "Sharp",
+"Shiny", "Short", "Shy", "Silky", "Silly", "Skinny", "Sleepy", "Slimy", "Slippery", "Small",
+"Smarmy", "Smiling", "Smoggy", "Smooth", "Smug", "Soggy", "Solid", "Sore", "Sour", "Sparkling",
+"Spicy", "Splendid", "Spotless", "Spotty", "Square", "Stale", "Steady", "Steep", "Sticky", "Stinky",
+"Stormy", "Stout", "Straight", "Strange", "Strong", "Stunning", "Stupid", "Substantial",
+"Successful", "Succulent", "Super", "Superficial", "Superior", "Swanky", "Sweet", "Taboo", "Tacit",
+"Tacky", "Talented", "Tall", "Tame", "Tan", "Tangible", "Tangy", "Tart", "Tasteful", "Tasteless",
+"Tasty", "Tawdry", "Tearful", "Tedious", "Teeny", "Teeny-Tiny", "Telling", "Tender", "Tense",
+"Terrible", "Testy", "Thankful", "Thick", "Thoughtful", "Thoughtless", "Tight", "Timely", "Tired",
+"Tough", "Tricky", "Trite", "Troubled", "Twitterpated", "Ubiquitous", "Ugliest", "Ugly", "Ultra",
+"Unable", "Unaccountable", "Unadvised", "Unarmed", "Unbecoming", "Unbiased", "Unbreakable",
+"Uncovered", "Understood", "Undesirable", "Unequal", "Unequaled", "Uneven", "Unhealthy",
+"Uninterested", "Unique", "Unkempt", "Unknown", "Unnatural", "Unruly", "Unsightly", "Unsuitable",
+"Untidy", "Unused", "Unusual", "Unwieldy", "Unwritten", "Upbeat", "Uppity", "Upset", "Uptight",
+"Used", "Useful", "Useless", "Utopian", "Utter", "Uttermost", "Vacuous", "Vagabond", "Vague",
+"Valuable", "Various", "Vast", "Vengeful", "Venomous", "Verdant", "Versed", "Vexed", "Victorious",
+"Vigorous", "Violent", "Violet", "Virtuous", "Vivacious", "Vivid", "Voiceless", "Volatile",
+"Voracious", "Vulgar", "Wacky", "Waggish", "Waiting", "Wakeful", "Wandering", "Warlike", "Warm",
+"Wary", "Wasteful", "Watery", "Weak", "Wealthy", "Weary", "Well-Groomed", "Well-Made", "Well-Off",
+"Well-To-Do", "Wet", "Whimsical", "Whispering", "White", "Whole", "Whopping", "Wicked", "Wide",
+"Wide-Eyed", "Wiggly", "Wild", "Willing", "Windy", "Winning", "Winsome", "Winter", "Wintery", "Wiry",
+"Wise", "Wishful", "Wispy", "Wistful", "Withering", "Witless", "Witty", "Wizardly", "Wobbly",
+"Woebegone", "Woeful", "Wolfish", "Womanly", "Wonderful", "Wondrous", "Wood", "Wooden", "Wooing",
+"Wool", "Woolen", "Woozy", "Wordless", "Wordy", "Work", "Workable", "Working", "Work Oriented",
+"Worldly", "Worn", "Worn Down", "Worn Out", "Worried", "Worrisome", "Worrying", "Worse", "Worshipful",
+"Worst", "Worth", "Worthless", "Worthwhile", "Worthy", "Wounding", "Wrathful", "Wrenching",
+"Wretched", "Wriggling", "Wriggly", "Wrinkled", "Wrinkly", "Written", "Wrong", "Wrongful", "Wry",
+"Yearning", "Yellow", "Yelping", "Yielding", "Young", "Youthful", "Yummy", "Zany", "Zealous",
+"Zestful", "Zesty", "Zippy", "Zonked",
+"Ancient", "Arcane", "Barbaric", "Blasphemous", "Bloodthirsty", "Buried", "Cursed", "Decayed",
+"Demonic", "Desolate", "Dire", "Diseased", "Eldritch", "Forsaken", "Ghastly", "Grim", "Harrowed",
+"Hellbound", "Hollow", "Infernal", "Loathsome", "Malevolent", "Nefarious", "Nocturnal", "Obscure",
+"Pandemonium", "Profane", "Ravaged", "Spectral", "Tainted", "Unholy", "Vile", "Wretched",
+"Abyssal", "Accursed", "Befouled", "Blighted", "Corrupted", "Defiled", "Enshrouded", "Fetid",
+"Gloom", "Heretical", "Incursed", "Looming", "Macabre", "Noxious", "Pernicious", "Quarantined",
+"Ruined", "Sinister", "Somber", "Tenebrous", "Unclean", "Verminous", "Withered",
+"Austere", "Benighted", "Blighted", "Brittle", "Cacophonous", "Decrepitude", "Drear",
+"Eviscerated", "Faded", "Grizzled", "Haggard", "Jaded", "Knurly", "Lurid", "Moldering",
+"Numb", "Oppressive", "Pale", "Quandary", "Ravished", "Shattered", "Torpid", "Undying",
+"Vexed", "Waning", "Xeric", "Yielded", "Zealot",
+"Amorphous", "Bristling", "Crackling", "Diminished", "Effervescent", "Flailing", "Gnarled",
+"Humming", "Incandescent", "Jittering", "Keening", "Luminous", "Murmuring", "Nesting",
+"Oozing", "Pulsing", "Quivering", "Rancorous", "Shuddering", "Thrumming", "Ululating",
+"Vibrant", "Wailing", "Xenophobic", "Yearning", "Zigzagging",
+"Hulking", "Stout", "Towering", "Wiry", "Gaunt", "Rubicund", "Sinewy", "Petite", "Rotund",
+"Vermillion", "Cerulean", "Salmon", "Maroon", "Turquoise", "Chartreuse", "Crimson",
+"Sanguine", "Obsidian", "Ivory", "Sable", "Raven", "Ochre", "Vermilion",
+"Rusty", "Tarnished", "Battered", "Scorched", "Scarred", "Mottled", "Spotted", "Streaked"
+];
+
+const townPrefixes = [
+  "Dark", "Evil", "Grim", "Dusk", "Curse", "Rancid", "Putrid", "Stink", "Filth", "Gross",
+  "Rot", "Plague", "Dead", "Haunted", "Grave", "Vile", "Drunken", "Abuse", "Nameless", "Void"
+];
+
+const townSuffixes = [
+  "way", "fair", "grove", "way Wood", "fall", "hill", "vale", "town", " Market", "field",
+  "cliffs", "cliff", "hollow", "well", "key", "doom Hold", "soul", "church", "rise", "heart"
+];
+
+function generateTown() {
+  const prefix = randomItem(townPrefixes);
+  const suffix = randomItem(townSuffixes);
+  document.getElementById('town-result').textContent = prefix + suffix;
+}
+
+function generateTowns(count) {
+  const towns = [];
+  for (let i = 0; i < count; i++) {
+    const prefix = randomItem(townPrefixes);
+    const suffix = randomItem(townSuffixes);
+    towns.push(prefix + suffix);
+  }
+  document.getElementById('town-result').innerHTML = towns.join('<br>');
+}
+</script>
+
+</html>
